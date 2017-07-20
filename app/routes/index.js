@@ -14,4 +14,9 @@ module.exports = function (app, db) {
       .get(clickHandler.getClicks)
       .post(clickHandler.addClick)
       .delete(clickHandler.resetClicks);
+
+   app.route('/login')
+      .get(function (req, res) {
+          res.sendFile(process.cwd() + '/public/login.html');
+      });
 };
